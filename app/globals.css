@@ -54,8 +54,21 @@
 }
 
 @layer base {
-  * { @apply border-border outline-ring/50; }
+  * { 
+    @apply border-border outline-ring/50; 
+    -webkit-tap-highlight-color: transparent;
+  }
   html { background: var(--background); }
-  body { @apply bg-background text-foreground; font-family: Arial, Helvetica, sans-serif; }
+  body { 
+    @apply bg-background text-foreground; 
+    font-family: Arial, Helvetica, sans-serif; 
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+  }
+  input, textarea {
+    -webkit-user-select: auto;
+    user-select: auto;
+  }
   button, input { font: inherit; }
 }
